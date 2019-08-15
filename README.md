@@ -1,6 +1,6 @@
 # LoadPartial.js
 
-_The world's smallest static site generator!_
+_The world's smallest static site generator...?_
 
 `LoadPartial.js` fetches any text, HTML, or XML file of your choice from anywhere in your website's root folder (or sub-folder) on a server and loads it into an element on your webpage. This can be useful for building sidebar navigation for small websites, or for early-stage web development (prototyping).
 
