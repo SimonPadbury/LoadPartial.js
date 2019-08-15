@@ -6,16 +6,15 @@
 
 (function () {
 
-    "use strict";
+    'use strict;
 
     // Document Ready
     document.addEventListener('DOMContentLoaded', function () {
 
       [].forEach.call(document.querySelectorAll('[data-load-partial]'), function (el) {
 
-        var
-          loadPartial = el.getAttribute('data-load-partial'),
-          xhr = new XMLHttpRequest();
+        var loadPartial = el.getAttribute('data-load-partial');
+        var xhr = new XMLHttpRequest();
 
         xhr.open('GET', loadPartial);
         xhr.onreadystatechange = function () {
