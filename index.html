@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load Partial</title>
+
+  <!--
+  ======================
+       LOAD PARTIAL
+  ======================
+  -->
+  <script src="LoadPartial.js"></script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    code {
+      color: #0b0;
+    }
+    hr {
+      height: 1px;
+      margin: 2rem 0;
+      border: 0;
+      background: #ddd;
+    }
+    main {
+      max-width: 48rem;
+      margin: auto;
+      padding: 0 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Load-Partial</h1>
+
+    <p><em>The world's smallest static site generator...?</em></p>
+
+    <p>There may be some situations where you want to load a smaller "partial" file (text, HTML or XML) into a block on your webpage.</p>
+
+    <p><code>load-partial.js</code> fetches any text, HTML, or XML file of your choice from anywhere in your website's root folder (or sub-folders) on a server and loads it into an HTML element on your webpage.</p>
+    
+    <p>can be useful for building sidebar navigation for small websites, or for early-stage web development (prototyping).</p>
+
+    <p style="border: 1ps solid #ccc; background: #f5f5f5; padding: 1rem;"><strong>Note:</strong> This script works only for partials that are <em>hosted within your website</em> – it doesn't do cross-site scripting. And it only works via interaction with the web server hosting your website. Therefore, if you are just building your website in your computer without the use of a server or virtual server, <code>load-partial.js</code> won't work.</p>
+
+    <p>If you don't have a virtual server that you can use for website design and development, maybe the simplest free way to get one is for you to download and install the free Brackets code editor from <a href="http://brackets.io">http://brackets.io</a>. It has a built-in live preview server.</p>
+
+    <p>Read about Brackets Live Preview: <a href="https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview">https://github.com/adobe/brackets/wiki/How-to-Use-Brackets#live-preview</a>.
+
+    <p>See Brackets "Live Development in HTML" in action: <a href="http://youtu.be/Nhvj1NYC3Uc">http://youtu.be/Nhvj1NYC3Uc</a>.</p>
+
+    <h2>Example</h2>
+
+    <p>(If you see "This is an example!" in a dashed box below, then load-partial is working OK.)</p>
+
+    <div data-load-partial="example-partial.html"></div>
+
+    <h2>Explanation</h2>
+
+    <p>In this project's root folder, there you will see <code>example-partial.html</code>. There is an empty DIV above that has the attribute <code>data-load-partial="example-partial.html"</code>. The <code>load-partial.js</code> script reads that, and it sends an <a href="https://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a> to the server. If the server finds the requested file, then it is sent down and embedded in the webpage – into the same DIV. If nothing is found, then nothing will be displayed.</p>
+
+    <h2>How to Use</h2>
+
+    <pre><code class="language-HTML">&lt;div data-load-partial=&quot;folder-name/file-name.html&quot;&gt;&lt;/div&gt;</code></pre>
+
+    <p>If you place your requested file in the website root folder, then you don&#39;t need <code>folder-name/</code>. You can have a number of folders within folders and, if you put the correct <code>path/to/your/file.html</code> in the <code>data-load-partial=&quot;&quot;</code>, then the server should find what you want if it exists.</p>
+
+    <p>You can use the <code>load-partial.js</code> script and <code>data-load-partial=""</code> on any HTML tag. And you can use it any number of times on separate tags (but only once per tag), loading the same of different partials. The fetched partial file will <em>overwrite whever else was in the tag</em> – so, just open and close the tag, as in the DIV example above.</p>
+
+    <p>The embedded partial file, when written into your webpage, will receive CSS styling from your webpage&#39;s stylesheet – plus whatever styles it comes with.</p>
+
+  </main>
+</body>
+</html>
