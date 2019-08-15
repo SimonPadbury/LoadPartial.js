@@ -1,5 +1,5 @@
-// LOAD PARTIAL
-// ============
+// LoadPartial.js
+// ==============
 
 /* eslint-env browser */
 /* jshint browser: true */
